@@ -4,7 +4,7 @@ function Header() {
 
 
     return (
-        <p>TITLE GOES HERE</p>
+        <img src ='https://img.logoipsum.com/289.svg' />
         
 
       

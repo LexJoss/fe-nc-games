@@ -14,7 +14,10 @@ export const Singlereview = () => {
         .then((reviews) => {setRevbyIDData(reviews)})
     }, [])
 
-    console.log(revDatabyID)
+
+     
+
+    
 
    
     
@@ -24,23 +27,21 @@ export const Singlereview = () => {
             <section className ="display">
              <ul className="ul">
                
-                {revDatabyID.map((data) => {
-                    return (
                         
-                        <li key={data.review_id}>
+                        <li key={revDatabyID[0].review_id}>
                     
                         <div className ="card2">
                        
                             
                     
-                    <img src = {data.review_img_url} alt={data.title} />
-                    <h2>{data.owner} reviewed:<strong> {data.title}</strong> by {data.designer}</h2>
+                    <img src = {revDatabyID[0].review_img_url} alt={revDatabyID[0].title} />
+                    <h2>{revDatabyID[0].owner} reviewed:<strong> {revDatabyID[0].title}</strong> by {revDatabyID[0].designer}</h2>
                     <br></br>
-                    <p>"{data.review_body}"</p>
+                    <p>"{revDatabyID[0].review_body}"</p>
                     <br></br>
-                    <p>Votes: {data.votes}</p>
-                    <p >Comments: {data.comment_count} </p> 
-                    <p>{data.created_at}</p>
+                    <p>Votes: {revDatabyID[0].votes}</p>
+                    <p >Comments: {revDatabyID[0].comment_count} </p> 
+                    <p>{revDatabyID[0].created_at}</p>
                     <Link to={`/reviews`} className="text-link">
                     <p>[ Click to return to all reviews ]</p>
                     </Link>
@@ -53,11 +54,10 @@ export const Singlereview = () => {
                        
                         
                         
-                    );
-                })} 
+                 
                 
              </ul> 
-              
+        
             </section>
             )
         }
