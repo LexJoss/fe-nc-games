@@ -18,6 +18,13 @@ export const getCategories = () => {
     })
 }
 
+export const getReviewsByID = (review_id) => {
+    return gamesApi.get(`/reviews/${review_id}`)
+    .then(({data}) => {
+        return data
+    })
+}
+
    
 
 

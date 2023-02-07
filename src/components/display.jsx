@@ -1,5 +1,7 @@
 import {getReviews} from '../utils/api'
 import {useState, useEffect} from 'react'
+import { Route, Routes, Link } from 'react-router-dom';
+
 
 const Display = () => {
     
@@ -13,33 +15,46 @@ const Display = () => {
 
     console.log(revData)
 
+    const currentURL = window.location.href
+
+    console.log(currentURL)
+
     
 
     return (
-            
+            <section className ="display">
             <ul className="ul">
                
-                {revData.map((data, index) => {
+                {revData.map((data) => {
                     return (
+                        
                         <li key={data.review_id}>
+                             <Link to={`/reviews/${data.review_id}`} className="link">
                         <div className ="card">
-                            
-                    
-                    <img src = {data.review_img_url} alt={data.title} />
-                    <h2>{data.owner} reviewed:<strong> {data.title}</strong> by {data.designer}</h2>
-                    <br></br>
-                    <p>"{data.review_body}"</p>
+                       
+                    <h2><strong> {data.title}</strong> by {data.designer}</h2>
+                    <h3>Reviewed by {data.owner}</h3>
                     <br></br>
                     <p>Votes: {data.votes}</p>
                     <p >Comments: {data.comment_count} </p> 
                     <p>{data.created_at}</p>
+                    <br></br>
+                    <p>Click to see full review</p>
+    
                         </div>
+                        </Link>
                         </li>
+                        
+                        
+                       
+                        
                         
                     );
                 })}
                 
+                
             </ul> 
+            </section>
             )
         }
     
