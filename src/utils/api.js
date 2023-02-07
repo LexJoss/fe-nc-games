@@ -25,6 +25,13 @@ export const getReviewsByID = (review_id) => {
     })
 }
 
+export const getCommentsByRID = (review_id) => {
+    return gamesApi.get(`/reviews/${review_id}/comments`)
+    .then(({data}) => {
+        return data
+    })
+}
+
    
 
 
