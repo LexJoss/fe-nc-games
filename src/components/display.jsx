@@ -13,12 +13,6 @@ const Display = () => {
         .then((reviews) => {setRevData(reviews)})
     }, [])
 
-    console.log(revData)
-
-    const currentURL = window.location.href
-
-    console.log(currentURL)
-
     
 
     return (

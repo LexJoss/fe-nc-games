@@ -1,9 +1,11 @@
 import {getReviewsByID} from '../utils/api'
 import {useState, useEffect} from 'react'
 import { Route, Routes, Link, useParams } from 'react-router-dom';
-import {Comments} from './comments'
 
-export const Singlereview = () => {
+
+export const Comments = (checkData) => {
+
+    console.log(checkData)
    
     const [revDatabyID, setRevbyIDData] = useState([])
 
@@ -17,7 +19,7 @@ export const Singlereview = () => {
     console.log(revDatabyID)
 
    
-    
+
     
 
     return (
@@ -28,7 +30,7 @@ export const Singlereview = () => {
                     return (
                         
                         <li key={data.review_id}>
-                    
+        
                         <div className ="card2">
                        
                             
@@ -41,11 +43,12 @@ export const Singlereview = () => {
                     <p>Votes: {data.votes}</p>
                     <p >Comments: {data.comment_count} </p> 
                     <p>{data.created_at}</p>
-                    <Link to={`/reviews`} className="text-link">
-                    <p>[ Click to return to all reviews ]</p>
+                    <Link to={`/reviews`} className="link">
+                    <p>Click to return to all reviews</p>
                     </Link>
+    
                         </div>
-
+    
                         </li>
                         
                         
@@ -56,8 +59,7 @@ export const Singlereview = () => {
                     );
                 })} 
                 
-             </ul> 
-              
+             </ul>
             </section>
             )
         }
