@@ -89,3 +89,8 @@
   padding: 2px 16px;
 }
 
+h2 {
+    color: white;
+    font-size: calc(10px + 3vmin)
+}
+

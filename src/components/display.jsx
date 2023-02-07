@@ -21,20 +21,20 @@ const Display = () => {
                
                 {revData.map((data, index) => {
                     return (
-                        
+                        <li key={data.review_id}>
                         <div className ="card">
                             
-                        <p>
+                    
                     <img src = {data.review_img_url} alt={data.title} />
-                    <li key="1">{data.owner} reviewed:<strong> {data.title}</strong> by {data.designer}</li>
+                    <h2>{data.owner} reviewed:<strong> {data.title}</strong> by {data.designer}</h2>
                     <br></br>
-                    <li key="2">"{data.review_body}"</li>
+                    <p>"{data.review_body}"</p>
                     <br></br>
-                    <li key="3">{data.created_at}</li>
-                    <li key="4">Comments: {data.comment_count}</li> 
-                    <li key="5">Votes: {data.votes}</li>
-                        </p>
+                    <p>Votes: {data.votes}</p>
+                    <p >Comments: {data.comment_count} </p> 
+                    <p>{data.created_at}</p>
                         </div>
+                        </li>
                         
                     );
                 })}
