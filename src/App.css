@@ -43,7 +43,7 @@
 
 .display{
   background-color: #282c3416;
-  min-height: 30vh;
+  min-height: 76vh;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -80,14 +80,32 @@
   padding: 10px 16px;
 }
 
-/* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 0 8px 16px teal;
+}
+
+.card2 {
+  box-shadow: 0 4px 8px 0 silver;
+  transition: 0.3s;
+  border-radius: 5px;
+  background-color: #282c34;
+  margin: 5vw;
+  padding: 10px 16px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card2:hover {
+  box-shadow: 0 8px 16px purple
 }
 
 /* Add some padding inside the card container */
 .container {
   padding: 2px 16px;
+}
+
+.link {
+  text-decoration: none;
+  color: white
 }
 
 h2 {
