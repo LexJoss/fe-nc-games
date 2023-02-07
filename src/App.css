@@ -105,7 +105,20 @@
 
 .link {
   text-decoration: none;
-  color: white
+  color: white;
+ 
+}
+
+.text-link {
+  text-decoration: none;
+  color: white;
+  text-shadow: 2px 2px #282c34;
+  transition: 0.3s;
+}
+
+.text-link:hover {
+  color: rgb(28, 159, 159);
+  text-shadow: 0 8px 16px purple
 }
 
 h2 {
