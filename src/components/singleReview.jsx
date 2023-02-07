@@ -14,16 +14,13 @@ export const Singlereview = () => {
         .then((reviews) => {setRevbyIDData(reviews)})
     }, [])
 
+    if (typeof revDatabyID[0] === 'object') {
 
-     
+        let checkData = revDatabyID[0].comment_count
 
-    
+        
 
-   
-    
-    
-
-    return (
+        return (
             <section className ="display">
              <ul className="ul">
                
@@ -57,7 +54,7 @@ export const Singlereview = () => {
                  
                 
              </ul> 
-        
+            <Comments data={checkData} review_id={revDatabyID[0].review_id}/>
             </section>
             )
-        }
+        }}

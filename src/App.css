@@ -98,6 +98,20 @@
   box-shadow: 0 8px 16px purple
 }
 
+.card3 {
+  box-shadow: 0 4px 8px 0 silver;
+  transition: 0.3s;
+  border-radius: 5px;
+  background-color: #282c34;
+  margin: 5vw;
+  padding: 10px 16px;
+}
+
+
+.card3:hover {
+  box-shadow: 0 8px 16px aqua
+}
+
 /* Add some padding inside the card container */
 .container {
   padding: 2px 16px;
@@ -118,11 +132,19 @@
 
 .text-link:hover {
   color: rgb(28, 159, 159);
-  text-shadow: 0 8px 16px purple
+  text-shadow: 0 8px 16px purple;
 }
 
 h2 {
     color: white;
-    font-size: calc(10px + 3vmin)
+    font-size: calc(10px + 3vmin);
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
 }
 
