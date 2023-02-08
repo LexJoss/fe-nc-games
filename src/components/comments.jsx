@@ -17,7 +17,7 @@ export const Comments = (props) => {
         .then((comments) => {setComments(comments)})
     }, [])
 
-    console.log(comments)
+    
 
     
 
@@ -39,9 +39,10 @@ export const Comments = (props) => {
                        
                     <p>"{data.body}"</p>
                     <p className="right">{data.author}</p>
+                    <p className="right-date">{data.created_at}</p>
                     <br></br>
                     <p className="left">Votes: {data.votes}</p>
-                    <p className="left">{data.created_at}</p>
+                    
                     
     
                         </div>

@@ -32,6 +32,16 @@ export const getCommentsByRID = (review_id) => {
     })
 }
 
+export const PatchReviewVotes = (review_id, patchVotes) => {
+
+    const patchBody = {inc_votes : patchVotes}
+
+    return gamesApi.patch(`/reviews/${review_id}`, patchBody)
+    .then(({data}) => {
+        return data
+    })
+}
+
    
 
 
