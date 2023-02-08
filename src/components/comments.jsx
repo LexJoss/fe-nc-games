@@ -27,7 +27,7 @@ export const Comments = (props) => {
 
     return (
             <section className ="display">
-                <p> Comments</p>
+                <h3> Comments</h3>
              <ul className="ul">
                
                 {comments.map((data) => {

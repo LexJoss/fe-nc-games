@@ -36,11 +36,11 @@ export const Singlereview = () => {
                     <br></br>
                     <p>"{revDatabyID[0].review_body}"</p>
                     <br></br>
-                    <p>Votes: {revDatabyID[0].votes}</p>
-                    <p >Comments: {revDatabyID[0].comment_count} </p> 
-                    <p>{revDatabyID[0].created_at}</p>
+                    <p >Comments: {revDatabyID[0].comment_count}</p>
+                    <p className="left">Votes: {revDatabyID[0].votes} </p> 
+                    <p className="left">{revDatabyID[0].created_at}</p>
                     <Link to={`/reviews`} className="text-link">
-                    <p>[ Click to return to all reviews ]</p>
+                    <p>[ Return to all reviews ]</p>
                     </Link>
                         </div>
 
