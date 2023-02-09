@@ -6,7 +6,6 @@ function Nav( {defineCat} ) {
 
     const [cats, setCats] = useState([])
 
-    console.log(cats)
 
    
         useEffect(() => {

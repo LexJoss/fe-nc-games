@@ -10,7 +10,7 @@ const DisplayCats = ( { cats } ) => {
     const [revData, setRevData] = useState([])
 
     const cat = cats
-    console.log(cat)
+    
 
     useEffect(() => {
         getReviewsByCat(cats)
