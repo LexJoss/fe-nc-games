@@ -10,12 +10,17 @@ import react from 'react'
 import Display from './components/display'
 import {Singlereview} from './components/singleReview'
 import {Home} from './components/Home'
+import DisplayCats from './components/displayCats';
 
 
 function App() {
 
   const [cats, setCat] = useState("")
 
+
+  const defineCat  = (target) => {
+    setCat(target)
+  }
  
 
  
@@ -28,13 +33,20 @@ function App() {
         <Header />
         </section>
         <section className="content">
-          <Nav />
+          <Nav defineCat={defineCat} />
       </section>
        <section className="display">
         <Routes>
             <Route path ={`/`} element={<Home />} />
             <Route path={`reviews/:review_id`} element={<Singlereview />} />
             <Route path={`reviews/`} element={<Display />} />
+            <Route path={`reviews/strategy`} element={<DisplayCats cats={cats}/>} />
+            <Route path={`reviews/hidden-roles`} element={<DisplayCats cats={cats}/>} />
+            <Route path={`reviews/dexterity`} element={<DisplayCats cats={cats}/>} />
+            <Route path={`reviews/push-your-luck`} element={<DisplayCats cats={cats}/>} />
+            <Route path={`reviews/roll-and-write`} element={<DisplayCats cats={cats}/>} />
+            <Route path={`reviews/deck-building`} element={<DisplayCats cats={cats}/>} />
+            <Route path={`reviews/engine-building`} element={<DisplayCats cats={cats}/>} />
             </Routes>
       </section> 
     </div>

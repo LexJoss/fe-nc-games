@@ -16,7 +16,7 @@ export const Comments = (props) => {
 
     useEffect(() => {
         getCommentsByRID(review_id)
-        .then((comments) => {setComments(comments)})
+        .then((comments) => {setComments(comments.reverse())})
     }, [commentChange1, review_id])
 
     
