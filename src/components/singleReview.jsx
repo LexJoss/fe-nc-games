@@ -3,6 +3,8 @@ import {useState, useEffect} from 'react'
 import { Route, Routes, Link, useParams } from 'react-router-dom';
 import {Comments} from './comments'
 import {Votes} from './revVotes'
+import {Button} from './commentsButton'
+
 
 export const Singlereview = () => {
    
@@ -14,6 +16,8 @@ export const Singlereview = () => {
         getReviewsByID(review_id)
         .then((reviews) => {setRevbyIDData(reviews)})
     }, [])
+
+   
 
     if (typeof revDatabyID[0] === 'object') {
 
@@ -55,6 +59,7 @@ export const Singlereview = () => {
                  
                 
              </ul> 
+            <Button review_id ={revDatabyID[0].review_id}/>
             <Comments data={checkData} review_id={revDatabyID[0].review_id}/>
             </section>
             )
