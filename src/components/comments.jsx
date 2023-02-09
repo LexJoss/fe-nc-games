@@ -5,17 +5,21 @@ import { Route, Routes, Link, useParams } from 'react-router-dom';
 
 export const Comments = (props) => {
 
+    const commentChange1 = props.comments
     
     
    
     const [comments, setComments] = useState([])
-
+        console.log(commentChange1)
     const { review_id } = useParams();
+
+    
 
     useEffect(() => {
         getCommentsByRID(review_id)
         .then((comments) => {setComments(comments)})
-    }, [])
+        .then(console.log("I changed"))
+    }, [commentChange1])
 
     
 

@@ -6,8 +6,6 @@ import {setState, useState, useEffect} from 'react'
 export const Fader2 = ({ text , off}) => {
 
     
-console.log(off)
-    
 
     const [fadeProp, setFadeProp] = useState({
         fade: 'fade-out'}
@@ -52,7 +50,7 @@ console.log(off)
 
 
 Fader2.defaultProps = {
-    text: 'Username not found, please try again'
+    text: 'Username not found. Please try again'
 }
 
 Fader2.propTypes = {

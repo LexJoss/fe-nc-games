@@ -14,7 +14,10 @@ export const Commentform = (props) => {
     const [loading, setLoading] = useState(false)
 
    const review_id = props.review_id
-   console.log(review_id)
+
+   const changeComments = props.change
+   
+   
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -23,9 +26,11 @@ export const Commentform = (props) => {
         return PostComment(review_id, body, username)
         .then (() => {setSuccess(true)})
         .then (() => {setLoading(false)})
+        .then (() => changeComments())
         .catch((err) => {
           setErr(err.response.status)
           setLoading(false)
+          changeComments()
         })
         } 
 

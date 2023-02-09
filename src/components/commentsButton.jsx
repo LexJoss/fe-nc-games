@@ -9,7 +9,7 @@ export const Button = (props) => {
     const [check, setCheck] = useState(false);
      
   
-    const Click = () => { setCheck(true)}
+    const Click = () => {setCheck(true)}
       
       
       
@@ -18,7 +18,7 @@ export const Button = (props) => {
   return ( 
     <div>
     <button className="vote-button" disabled={check === true }onClick={() => {Click()}}>Leave a comment</button>
-    {check && <Commentform review_id={review_id}/>} 
+    {check && <Commentform review_id={review_id} change={props.change}/>} 
     </div>
 
     

@@ -6,7 +6,7 @@ import {setState, useState, useEffect} from 'react'
 export const Fader = ({ text , off}) => {
 
     
-console.log(off)
+
     
 
     const [fadeProp, setFadeProp] = useState({
