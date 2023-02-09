@@ -10,7 +10,6 @@ export const Comments = (props) => {
     
    
     const [comments, setComments] = useState([])
-        console.log(commentChange1)
     const { review_id } = useParams();
 
     
@@ -18,7 +17,6 @@ export const Comments = (props) => {
     useEffect(() => {
         getCommentsByRID(review_id)
         .then((comments) => {setComments(comments)})
-        .then(console.log("I changed"))
     }, [commentChange1])
 
     
