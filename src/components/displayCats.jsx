@@ -9,13 +9,13 @@ const DisplayCats = ( { cats } ) => {
 
     const [revData, setRevData] = useState([])
 
-    const cat = cats
+    
     
 
     useEffect(() => {
         getReviewsByCat(cats)
         .then((reviews) => {setRevData(reviews)})
-    }, [cat])
+    }, [cats])
 
     
 
