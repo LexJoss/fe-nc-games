@@ -1,6 +1,5 @@
 import {PropTypes} from 'prop-types'
-import react from 'react'
-import {setState, useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 
 
 export const Fader = ({ text , off}) => {
@@ -37,11 +36,11 @@ export const Fader = ({ text , off}) => {
         
             }
             const timeout2 = setInterval(() => {
-                {off()}
+                off()
             }, 4000);
             return () => clearInterval(timeout2)
 
-            }, [fadeProp]) 
+            }, [fadeProp, blink, off]) 
 
     return (
         

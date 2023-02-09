@@ -55,6 +55,13 @@ export const PostComment = (review_id, body, username) => {
 
 }
 
+export const GetCategories = () => {
+    return gamesApi.get(`/categories`)
+    .then(({data}) => {
+        return data
+    })
+}
+
    
 
 

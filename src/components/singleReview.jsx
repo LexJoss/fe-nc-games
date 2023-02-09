@@ -1,6 +1,6 @@
 import {getReviewsByID} from '../utils/api'
 import {useState, useEffect} from 'react'
-import { Route, Routes, Link, useParams } from 'react-router-dom';
+import {Link, useParams } from 'react-router-dom';
 import {Comments} from './comments'
 import {Votes} from './revVotes'
 import {Button} from './commentsButton'
@@ -22,7 +22,7 @@ export const Singlereview = () => {
     useEffect(() => {
         getReviewsByID(review_id)
         .then((reviews) => {setRevbyIDData(reviews)})
-    }, [])
+    }, [review_id])
 
    
 
