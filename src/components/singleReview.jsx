@@ -1,19 +1,30 @@
 import {getReviewsByID} from '../utils/api'
 import {useState, useEffect} from 'react'
-import { Route, Routes, Link, useParams } from 'react-router-dom';
+import {Link, useParams } from 'react-router-dom';
 import {Comments} from './comments'
 import {Votes} from './revVotes'
+import {Button} from './commentsButton'
+
 
 export const Singlereview = () => {
    
     const [revDatabyID, setRevbyIDData] = useState([])
-
+    const [commentChange, setCommentChange] = useState(0)
+    
     const { review_id } = useParams();
+
+    const updateComments = () => {
+        setCommentChange(commentChange +1)
+    }
+
+    
 
     useEffect(() => {
         getReviewsByID(review_id)
         .then((reviews) => {setRevbyIDData(reviews)})
-    }, [])
+    }, [review_id])
+
+   
 
     if (typeof revDatabyID[0] === 'object') {
 
@@ -41,7 +52,7 @@ export const Singlereview = () => {
                     <p className="left">Comments: {revDatabyID[0].comment_count}</p> 
                     <Votes review_id ={revDatabyID[0].review_id} votes= {revDatabyID[0].votes} />
                     <Link to={`/reviews`} className="text-link">
-                    <p>[ Return to all reviews ]</p>
+                    <button className="vote-button">Return to all reviews</button>
                     </Link>
                         </div>
 
@@ -55,7 +66,8 @@ export const Singlereview = () => {
                  
                 
              </ul> 
-            <Comments data={checkData} review_id={revDatabyID[0].review_id}/>
+            <Button review_id ={revDatabyID[0].review_id} change={updateComments}/>
+            <Comments data={checkData} review_id={revDatabyID[0].review_id} comments={commentChange} />
             </section>
             )
         }}

@@ -19,25 +19,30 @@
 
 .App-header {
   background-color:#1d2027;
-  max-height: 20vh;
+  max-height: 12vh;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  grid-area: 'header'
+  
+ 
+  
 }
 
 .content {
   background-color: #1d2027;
-  max-height: 20vh;
-  display: grid;
-  flex-direction: column;
+  max-height: 24vh;
+  display: inline;
+  flex-direction: row;
   align-items: top;
   justify-content: top;
   font-size: calc(8px + 2vmin);
   color: white;
-  grid-area: "nav"
+  grid-area: "nav";
+  
+  
+  
 
 }
 
@@ -68,6 +73,11 @@
 
 .ul {
     list-style-type: none;
+}
+
+.inline-list {
+  display: inline;
+  padding: 0px;
 }
 
 .card {
@@ -106,6 +116,8 @@
   margin: 5vw;
   padding: 10px 16px;
 }
+
+
 
 
 .card3:hover {
@@ -168,6 +180,24 @@ h2 {
   border-color: #282c34;;
 }
 
+.nav-button {
+  text-align: left;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px 0 silver;
+  transition: 0.3s;
+  border-radius: 5px;
+  background-color: #313438;
+  margin: 3vw;
+  padding: 4px, 8px;
+  color: white;
+  border-color: #282c34;;
+}
+
+.nav-button:hover {
+  box-shadow: 0 8px 16px aqua;
+  color: aqua
+}
+
 .vote-button:hover {
   box-shadow: 0 8px 16px aqua;
   color: aqua
@@ -199,4 +229,74 @@ h2 {
 .vote-button2:disabled:hover {
   box-shadow: 0 8px 16px silver;
   color: silver;
+}
+
+.text-body {
+  width: 80%;
+  height: 125px;
+  padding: 12px 30px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  border-color: #282c34;
+  outline: none;
+  resize: none;
+  background-color: silver;
+  box-shadow: 0 2px 4px 0 silver;
+  transition: 0.3s;
+}
+
+.text-body:required:invalid {
+  box-shadow: 0 5px 10px darkred;
+}
+
+.text-body:required:valid {
+  box-shadow: 0 5px 10px lightgreen
+}
+
+.text-body2 {
+  width: 30%;
+  height: 35px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  border-color: #282c34;
+  outline: none;
+  resize: none;
+  background-color: silver;
+  text-align: center
+}
+
+.text-body2:required:invalid {
+  box-shadow: 0 5px 10px darkred;
+}
+
+.text-body2:required:valid {
+  box-shadow: 0 5px 10px lightgreen
+}
+
+.left-text-body {
+  width: 20%;
+  height: 20px;
+  padding: 12px 30px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  border-color: #282c34;
+  outline: none;
+  resize: none;
+  background-color: silver;
+  text-align: left;
+  display: block;
+  padding-right: 5px, 5px;
+}
+
+.fade-in {
+  transition: opacity 1s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
 }

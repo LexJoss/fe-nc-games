@@ -42,6 +42,26 @@ export const PatchReviewVotes = (review_id, patchVotes) => {
     })
 }
 
+export const PostComment = (review_id, body, username) => {
+    
+    const postBody = { body : body,
+        username : username
+    }
+
+    return gamesApi.post(`/reviews/${review_id}/comments`, postBody)
+    .then(({data}) => {
+        return data
+    })
+
+}
+
+export const GetCategories = () => {
+    return gamesApi.get(`/categories`)
+    .then(({data}) => {
+        return data
+    })
+}
+
    
 
 

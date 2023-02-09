@@ -1,21 +1,23 @@
 import {getCommentsByRID} from '../utils/api'
 import {useState, useEffect} from 'react'
-import { Route, Routes, Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 
 export const Comments = (props) => {
 
+    const commentChange1 = props.comments
     
     
    
     const [comments, setComments] = useState([])
-
     const { review_id } = useParams();
+
+    
 
     useEffect(() => {
         getCommentsByRID(review_id)
         .then((comments) => {setComments(comments)})
-    }, [])
+    }, [commentChange1, review_id])
 
     
 
