@@ -20,7 +20,7 @@ const DisplayCats = ( { cats, sortby, order } ) => {
 
         if(order) {search += `&order=${order}`}
 
-        console.log(search)
+        
         getReviewsByCat(search)
         .then((reviews) => {setRevData(reviews)})
     } 
