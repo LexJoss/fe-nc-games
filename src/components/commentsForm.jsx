@@ -29,8 +29,11 @@ export const Commentform = (props) => {
         .then (() => changeComments())
         .catch((err) => {
           setErr(err.response.status)
-          setLoading(false)
           changeComments()
+
+          const timeout = setTimeout(() => {
+            setLoading(false)
+        }, 5000);
         })
         } 
 
