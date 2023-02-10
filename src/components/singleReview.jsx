@@ -10,6 +10,8 @@ export const Singlereview = () => {
    
     const [revDatabyID, setRevbyIDData] = useState([])
     const [commentChange, setCommentChange] = useState(0)
+
+    console.log(commentChange)
     
     const { review_id } = useParams();
 
@@ -67,7 +69,7 @@ export const Singlereview = () => {
                 
              </ul> 
             <Button review_id ={revDatabyID[0].review_id} change={updateComments}/>
-            <Comments data={checkData} review_id={revDatabyID[0].review_id} comments={commentChange} />
+            <Comments data={checkData} review_id={revDatabyID[0].review_id} comments={commentChange} change={updateComments} />
             </section>
             )
         }}

@@ -25,12 +25,18 @@ export const Commentform = (props) => {
         setLoading(true)
         return PostComment(review_id, body, username)
         .then (() => {setSuccess(true)})
-        .then (() => {setLoading(false)})
+        .then (() => {const timeout = setTimeout(() => {
+          setLoading(false)
+      }, 5000);
+      })
         .then (() => changeComments())
         .catch((err) => {
           setErr(err.response.status)
-          setLoading(false)
           changeComments()
+
+          const timeout = setTimeout(() => {
+            setLoading(false)
+        }, 5000);
         })
         } 
 
@@ -46,7 +52,7 @@ export const Commentform = (props) => {
    
   
   return ( 
-    
+    <section className ="display">
     <div className="card3"> 
     <form onSubmit={handleSubmit}>
         <br />
@@ -60,7 +66,8 @@ export const Commentform = (props) => {
         {success && <Fader off={turnItOff}/>}  {err === 400 && <Fader2 off={turnErrOff}/>}
         
     </form>
-    </div> 
+    </div>
+    </section>
     
   ); 
   
