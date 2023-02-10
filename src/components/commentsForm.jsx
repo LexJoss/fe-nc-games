@@ -25,7 +25,10 @@ export const Commentform = (props) => {
         setLoading(true)
         return PostComment(review_id, body, username)
         .then (() => {setSuccess(true)})
-        .then (() => {setLoading(false)})
+        .then (() => {const timeout = setTimeout(() => {
+          setLoading(false)
+      }, 5000);
+      })
         .then (() => changeComments())
         .catch((err) => {
           setErr(err.response.status)
