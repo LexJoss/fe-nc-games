@@ -69,8 +69,8 @@ export const getReviewsByCat = (search) => {
     })
 }
 
-export const DeleteComment = () => {
-    return gamesApi.delete('/comments/:comment_id')
+export const DeleteComment = (id) => {
+    return gamesApi.delete(`/comments/${id}`)
     .then(({data}) => {
     return data})
 }

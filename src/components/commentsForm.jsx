@@ -46,7 +46,7 @@ export const Commentform = (props) => {
    
   
   return ( 
-    
+    <section className ="display">
     <div className="card3"> 
     <form onSubmit={handleSubmit}>
         <br />
@@ -60,7 +60,8 @@ export const Commentform = (props) => {
         {success && <Fader off={turnItOff}/>}  {err === 400 && <Fader2 off={turnErrOff}/>}
         
     </form>
-    </div> 
+    </div>
+    </section>
     
   ); 
   
