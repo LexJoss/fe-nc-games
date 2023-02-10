@@ -5,7 +5,7 @@ import Header from './components/header'
 import Nav from './components/nav'
 import {useState} from 'react'
 
-import Display from './components/display'
+
 import {Singlereview} from './components/singleReview'
 import {Home} from './components/Home'
 import DisplayCats from './components/displayCats';
