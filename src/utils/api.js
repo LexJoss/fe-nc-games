@@ -62,8 +62,8 @@ export const GetCategories = () => {
     })
 }
 
-export const getReviewsByCat = (category) => {
-    return gamesApi.get(`/reviews/?category=${category}`)
+export const getReviewsByCat = (search) => {
+    return gamesApi.get(search)
     .then(({data}) => {
         return data
     })

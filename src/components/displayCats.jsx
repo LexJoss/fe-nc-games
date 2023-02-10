@@ -3,19 +3,49 @@ import {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 
 
-const DisplayCats = ( { cats } ) => {
+const DisplayCats = ( { cats, sortby, order } ) => {
     
    
 
     const [revData, setRevData] = useState([])
 
-    
+   
     
 
     useEffect(() => {
-        getReviewsByCat(cats)
+        if (cats) {
+        let search = `/reviews/?category=${cats}`
+
+        if(sortby) {search += `&sort_by=${sortby}`}
+
+        if(order) {search += `&order=${order}`}
+
+        console.log(search)
+        getReviewsByCat(search)
         .then((reviews) => {setRevData(reviews)})
-    }, [cats])
+    } 
+    else if (sortby) {
+        let search = `/reviews/?sort_by=${sortby}`
+
+        if(order) {search += `&order=${order}`}
+
+        getReviewsByCat(search)
+        .then((reviews) => {setRevData(reviews)})
+    }
+    else if (order) {
+        let search = `reviews/?order=${order}`
+
+        getReviewsByCat(search)
+        .then((reviews) => {setRevData(reviews)})
+    }
+
+    else {let search = `reviews/`
+    getReviewsByCat(search)
+    .then((reviews) => {setRevData(reviews)})
+}
+
+
+    } , [cats, sortby, order]) 
 
     
 
