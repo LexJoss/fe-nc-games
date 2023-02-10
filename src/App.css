@@ -66,6 +66,18 @@
   padding: 60px
 }
 
+.display2{
+  background-color: #1d2027;
+  min-height: 100vh;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(4px + 2vmin);
+  color: white;
+  grid-area: 'display';
+  padding: 60px
+}
+
 .App-link {
   color: #61dafb;
 }

@@ -37,15 +37,12 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-        <section className="App-header">
-        <Header />
-        </section>
         <section className="content"> 
           <Nav defineCat={defineCat} defineSort={defineSort} defineOrder={defineOrder}/>
       </section>
        <section className="display">
         <Routes>
-            <Route path ={`/`} element={<Home />} />
+            <Route path ={`/`} element={<DisplayCats  sortby={sortby} order={order}/>} />
             <Route path={`reviews/:review_id`} element={<Singlereview />} />
             <Route path={`reviews/`} element={<DisplayCats  sortby={sortby} order={order}/>} />
             <Route path={`reviews/strategy`} element={<DisplayCats cats={cats} sortby={sortby} order={order}/>} />
